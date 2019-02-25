@@ -14,8 +14,7 @@ class App extends Component {
       <div className="App">
         <h1>My first react app</h1>
         <p>Welcome</p>
-        <Ninjas name="Ryu" age="25" belt="black"></Ninjas>
-        <Ninjas name="Jake" age="30" belt="brown"></Ninjas>
+        <Ninjas ninjas={this.state.ninjas}></Ninjas>
         
       </div>
     );
