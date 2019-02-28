@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Ninjas from './Ninjas';
-import AddNinja from './AddNinja';
 import Navbar from './components/Navbar';
 //import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
