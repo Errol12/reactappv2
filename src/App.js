@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Ninjas from './Ninjas';
 import AddNinja from './AddNinja';
-//import './App.css';
+import './App.css';
 
 class App extends Component {
   state = {
@@ -30,6 +30,15 @@ class App extends Component {
     this.setState({
       ninjas: ninjas
     })
+  }
+
+  componentDidMount(){
+    console.log('Component mounted');
+  }
+
+  componentDidUpdate(prevProps,prevState){
+    console.log('Component updated');
+    console.log(prevProps,prevState);
   }
   render() {
     return (
