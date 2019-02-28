@@ -8,7 +8,7 @@ class About extends Component {
           {name:'Yoshi',age: 20,belt: 'green',id: 2}
         ]
       }
-      
+
     addNinja = (ninja) => {
         console.log(ninja);
         ninja.id = Math.random();
