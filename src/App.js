@@ -8,6 +8,8 @@ import Contact from './components/Contact';
 
 class App extends Component {
   
+  
+
   componentDidMount(){
     console.log('Component mounted');
   }
