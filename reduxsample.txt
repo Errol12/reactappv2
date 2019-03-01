@@ -1,10 +1,15 @@
 //https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.min.js
 
+//Create Redux Store
 const { createStore } = Redux;
+
+//Create InitState
 const initState = {
   todos: [],
   posts: []
 }
+
+//Create Reducer to process the incoming state
 function myreducer(state = initState,action){
   console.log(action,state);
   if(action.type == 'ADD_TODO'){
@@ -15,16 +20,20 @@ function myreducer(state = initState,action){
   }
 }
 
+//Connect store and reducer
 const store = createStore(myreducer);
+
+//Subscribe and get output of the reducer
 store.subscribe(() => {
   console.log('State updated');
   console.log(store.getState());
 })
 
-
+//Action to send
 const todoAction = { type: 'ADD_TODO', todo: 'buy milk'}
 const todoAction2 = { type: 'ADD_TODO', todo: 'buy bread'}
 const todoAction3 = { type: 'ADD_TODO', post: 'buy bread'}
-//pass it to reducer
+
+//pass it to reducer for processing
 store.dispatch(todoAction)
 store.dispatch(todoAction2)

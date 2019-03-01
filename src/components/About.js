@@ -1,15 +1,17 @@
 import React,{ Component } from 'react';
 import Ninjas from '../Ninjas';
 import AddNinja from '../AddNinja';
-import axios from 'axios';
-import { Link,NavLink,withRouter } from 'react-router-dom';
+//import axios from 'axios';
+import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 class About extends Component {
     state = {
         ninjas : [
           {name:'Ryu',age: 30,belt: 'black',id:1},
           {name:'Yoshi',age: 20,belt: 'green',id: 2}
-        ],
-        posts : []
+        ]
+        //posts : []
       }
 
     addNinja = (ninja) => {
@@ -34,15 +36,17 @@ class About extends Component {
       }
 
       //https://jsonplaceholder.typicode.com/
-    componentDidMount(){
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then(res => {
-                console.log(res);
-                this.setState({
-                    posts: res.data.slice(0,10)
-                })
-            })
-    }  
+    // componentDidMount(){
+    //     axios.get('https://jsonplaceholder.typicode.com/posts')
+    //         .then(res => {
+    //             console.log(res);
+    //             this.setState({
+    //                 posts: res.data.slice(0,10)
+    //             })
+    //         })
+    // } 
+    
+    
     render(){
         const  posts  = this.state.posts;
         console.log('herte',posts);
@@ -74,4 +78,6 @@ class About extends Component {
     
 }
 
+
+const mapStateToProps = (state)
 export default About;
