@@ -5,19 +5,15 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
-
+import Post from './components/Post';
+import { Link,NavLink,withRouter } from 'react-router-dom';
 class App extends Component {
   
   
 
-  componentDidMount(){
-    console.log('Component mounted');
-  }
+ 
 
-  componentDidUpdate(prevProps,prevState){
-    console.log('Component updated');
-    console.log(prevProps,prevState);
-  }
+  
   render() {
     return (
       <BrowserRouter>
@@ -26,6 +22,7 @@ class App extends Component {
       <Route exact path='/' component={Home}/>
       <Route path='/about' component={About}/>
       <Route path='/contact' component={Contact}/> 
+      <Route exact path='/post/:post_id' component={Post}/>
         
       </div>
       </BrowserRouter>

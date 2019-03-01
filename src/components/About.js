@@ -2,6 +2,7 @@ import React,{ Component } from 'react';
 import Ninjas from '../Ninjas';
 import AddNinja from '../AddNinja';
 import axios from 'axios';
+import { Link,NavLink,withRouter } from 'react-router-dom';
 class About extends Component {
     state = {
         ninjas : [
@@ -51,6 +52,7 @@ class About extends Component {
                     <div className="post card" key={post.id}>
                         <div className="card-content">
                             <span className="card-title">{post.title}</span>
+                            <NavLink to={"/post/"+post.id}>About</NavLink>
                         </div>
                     </div>
                 )
