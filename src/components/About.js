@@ -48,8 +48,10 @@ class About extends Component {
     
     
     render(){
-        const  posts  = this.state.posts;
-        console.log('herte',posts);
+      //console.log('redux echo here');
+        //console.log(this.props);
+        const  posts  = this.props.posts;
+        //console.log('herte',posts);
         const postList = posts.length ? (
             posts.map(post => {
                 return (
@@ -78,6 +80,12 @@ class About extends Component {
     
 }
 
+//Specify data we need to grab from store
+const mapStateToProps = (state) => {
+  return {
+    posts: state.posts
+  }
+} 
 
-const mapStateToProps = (state)
-export default About;
+
+export default connect(mapStateToProps)(About);
